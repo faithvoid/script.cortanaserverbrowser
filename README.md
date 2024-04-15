@@ -1,5 +1,5 @@
 # Cortana Server Browser
-An XBMC script that shows how many players are logged into Insignia and XLink Kai, which games are being played, and upcoming events.
+An XBMC script that shows how many players are logged into Insignia and XLink Kai, which games are being played, and upcoming events. Made as part of "JX 720 - Insignia Edition", but can be used as a standalone script perfectly.
 
 ## Features:
 - See XLink Kai and Insignia matches in an instant with a friendly, easy-to-use pop-up window!
