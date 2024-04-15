@@ -12,6 +12,7 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 - Add more useful utilities.
 - Add "Insignia News" button.
 - Add "XLink Kai News" button.
+- Optimize RAM usage? (as it uses approx. 4-5MB when launching).
 
 ## To Do (Maybe):
 - Add a way to launch games via the server browser? (Would be cool, but VERY complicated)
