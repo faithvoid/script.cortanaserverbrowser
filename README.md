@@ -6,6 +6,7 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 ## Features:
 - See XLink Kai and Insignia matches in an instant with a friendly, easy-to-use pop-up window!
 - Comes with "Insignia Connection Test", a utility which makes sure your DNS is correctly set to Insignia's.
+- Toast (pop-up) notifications for new Insignia sessions, which can be enabled/disabled in the Insignia Settings menu! Now you'll never have to worry about missing a match!
 
 ## Bugs: 
 - You tell me.
