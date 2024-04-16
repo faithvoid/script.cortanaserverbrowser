@@ -17,6 +17,6 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 - Add more useful utilities.
 - Add XLink Kai matchmaking(?)
 - Add "Insignia News" & XLink Kai News" buttons.
-- 
+
 ## To Do (Maybe):
 - Restore some lost XLink Kai functionality (ie; joining matches, checking friends lists, etc.)
