@@ -11,6 +11,7 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 - Comes with "Insignia Connection Test", a utility which makes sure your DNS is correctly set to Insignia's.
 
 ## Bugs: 
+- Sometimes game events don't show up the first time. This doesn't seem to be XBMC-specific, as this happens on my PC too. Just try loading it again and it should work.
 - You tell me.
 
 ## To Do (100%):
