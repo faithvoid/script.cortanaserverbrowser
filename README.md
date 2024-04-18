@@ -34,13 +34,21 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 
 ## FAQ: 
 - "Does this work on XBMC4Gamers?"
+
 It should, but I haven't done the testing myself, as I don't personally use X4G (I think it's great for playing games w/ zero frills, but as an XBMC script/addon dev and an old media buff I use the original XBMC4Xbox!)
+
+
 - "Will this come to (insert non-XBMC dashboard name here)?"
+
 No, sorry! I wish!  Every piece of this code relies heavily on XBMC's Python implementation (including XBMC-specific code like dialogOk windows). You can feel free to make a homebrew application based on it if you want, but I won't be supporting non-XBMC dashboards.
+
 - "What's the point of this script, can't you just check these stats on your PC/Phone? Why support such an old piece of hardware?"
+
 Because the Xbox is genuinely one of the best consoles of all time, and had groundbreaking multiplayer features at the time. With the rise of projects like Insignia, I want to do what I can help players hop into the action immediately and grab all relevant information at a glance, without having to check their PC or phone, as some players mentioned not having consistent access to devices that weren't their Xbox or other video game consoles. I want to lower the barrier to entry for people and see plenty of new, friendly faces in-game!
+
 - "Why am I not getting notifications?"
-- The Insignia notifier won't notify you of active sessions if a game says (0 in 0 sessions), and if the RSS detects the same information it displayed last time, it won't show it until it changes again! This is to make sure you don't get spammed by non-active games and sessions you've already seen every minute. 
+
+The Insignia notifier won't notify you of active sessions if a game says (0 in 0 sessions), and if the RSS detects the same information it displayed last time, it won't show it until it changes again! This is to make sure you don't get spammed by non-active games and sessions you've already seen every minute. 
 
 ## Credits:
 - Insignia Team - For reviving one of the best multiplayer services of all time.
