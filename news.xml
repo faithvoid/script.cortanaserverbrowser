@@ -1,0 +1,15 @@
+<rss version="2.0">
+<channel>
+<title>Cortana News</title>
+<link>https://faithvoid.github.com</link>
+<description>
+The latest stats, active games, and events for Insignia, an Xbox Live server for the Original Xbox
+</description>
+<language>en-us</language>
+<atom:link href="https://raw.githubusercontent.com/faithvoid/script.cortanaserverbrowser/main/news.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title> Cortana v1.0 </title>
+<description> Hello World! </description>
+</title>
+<category>News</category>
+</item>
