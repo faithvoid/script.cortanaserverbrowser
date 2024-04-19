@@ -7,10 +7,11 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 - View current XLink Kai and Insignia matches in an instant with a friendly, easy-to-use pop-up window!
 - See a game popping off that you really want to join? Click on the game session you'd like to join, locate your game's directory if you haven't already, and you'll be able to immediately launch into that game any time you're in the browser!
 - Browse Insignia / XLink Kai statistics, game events, and news!
-- Toast (pop-up) notifications for new Insignia sessions, which can be enabled/disabled in the Insignia Settings menu! Now you'll never have to worry about missing a match!
+- Toast (pop-up) notifications for new Insignia sessions, which can be enabled/disabled in the Insignia Settings menu (and even enabled on startup!) Now you'll never have to worry about missing a match!
 - Comes with "Insignia Connection Test", a utility which makes sure your DNS is correctly set to Insignia's.
 - Built-in Cortana update utility! No PC needed!
 - Super modular! Each script is (usually) it's own .py file, so you can add/remove functionality easily!
+- Love XBMC4Gamers but love XBMC4Xbox more? Run XBMC4Gamers scripts directly from the Cortana settings menu! 
 
 ## Installation:
 - **Make sure your XBMC4Xbox settings are set to "Dashboard"!** XBMC4Gamers users don't have to worry about this as there's a DNS1 and DNS2 option, but XBMC4XBox by default only uses DNS1, which is usually set to Insignia, and won't allow you to connect to the rest of the internet. This should be fixed with the next X4X release!
@@ -29,8 +30,7 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 - Fix "News" script in Insignia and XLink Kai menus (currently doesn't correctly poll the RSS feeds correctly due to the older version of SSL/TLS on the Xbox, need to look into working around this)
 
 ## To Do (Maybe):
-- Restore some lost XLink Kai functionality (ie; joining matches directly by changing DNS settings automatically, checking friends lists, etc.)
-- Implement XBMC4Gamers scripts in the Cortana settings menu? (Need to get permission from developer first.)
+- Restore lost XLink Kai functionality by re-implememting Kai Engine HTTP API features. 
 
 ## FAQ: 
 - "Does this work on XBMC4Gamers?"
