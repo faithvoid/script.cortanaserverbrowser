@@ -53,4 +53,5 @@ The Insignia notifier won't notify you of active sessions if a game says (0 in 0
 ## Credits:
 - Insignia Team - For reviving one of the best multiplayer services of all time.
 - XBMC4Xbox Team - For making an incredibly useful and flexible dashboard for the original Xbox!
-- antonic901 - Letting me know that the latest XBMC trunk supports 
+- antonic901 - Letting me know that the latest XBMC trunk supports a newer version of OpenSSL & TLS 1.2!
+- rocky5 - For the XBMC4Gamers scripts!
