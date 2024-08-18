@@ -29,6 +29,7 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 - Implement Cortana Chat (still needs testing).
 - Add more useful utilities.
 - Fix "News" script in Insignia and XLink Kai menus (currently doesn't correctly poll the RSS feeds correctly due to the older version of SSL/TLS on the Xbox, need to look into working around this)
+- Reintroduce update feature (need stable domain name first).
 
 ## To Do (Maybe):
 - Restore lost XLink Kai functionality by re-implememting Kai Engine HTTP API features. 
