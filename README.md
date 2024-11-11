@@ -21,6 +21,7 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 - Profit.
 
 ## Bugs: 
+- You'll get an SSL error if your DNS #1 is set to Insignia. You'll need to either run ![insigniaDNS](https://github.com/insignia-live/insigniaDNS) on a host machine and point the DNS to that IP address, or set DNS #1 to a non-Insignia DNS. This will hopefully get rectified whenever the network changes that XBMC4Gamers has are backported to XBMC4Xbox.
 - Sometimes game events don't show up the first time. This doesn't seem to be XBMC-specific, as this happens when loading the RSS feed in my PC's browser too. Just try loading it again and it should work.
 - If a "Session" menu is empty, don't panic! It most likely means nobody's playing right now, or that your network isn't reaching the servers properly. Double-check the Insignia/XLink Kai websites to verify this. 
 - You tell me.
