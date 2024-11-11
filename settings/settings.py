@@ -11,7 +11,6 @@ def main():
         ("Dashboard Network Settings", "RunXBE(E:\\Apps\\MS Online Dashboard\\default.xbe)"),
         ("Internet Connection Test", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\internettest.py)"),
         ("Notification Settings", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\notificationsettings.py)"),
-        ("Clear Cache", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\clearcache.py)"),
         ("XBMC4Gamers Scripts", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\x4g.py)"),
     ]
     
