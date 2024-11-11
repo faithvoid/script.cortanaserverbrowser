@@ -10,8 +10,9 @@ def main():
         ("Xbox Dashboard", "RunXBE(E:\\Apps\\MS Xbox Dashboard\\default.xbe)"),
         ("Dashboard Network Settings", "RunXBE(E:\\Apps\\MS Online Dashboard\\default.xbe)"),
         ("Internet Connection Test", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\internettest.py)"),
-#        ("Notification Settings", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\notificationsettings.py)"),
+#       ("Notification Settings", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\notificationsettings.py)"),
         ("XBMC4Gamers Scripts", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\x4g.py)"),
+#       ("Update Cortana", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\update.py)"),
     ]
     
     feed_list = [name for name, _ in feeds]
