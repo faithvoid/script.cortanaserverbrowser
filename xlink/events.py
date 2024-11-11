@@ -34,11 +34,11 @@ def clean_html(text):
 
 def display_events(dialog, channel):
     events = ['...']  # Inserting the '...' at the beginning of the list
-    prefix_to_remove = "Team XLink Discord Game Event - "
+    prefix_to_remove = "Game Event - "
     for item in channel.findall('item'):
         title_elem = item.find('title')
         # Check if title starts with "Team XLink Discord Game Event"
-        if title_elem is not None and title_elem.text.startswith("Team XLink Discord Game Event"):
+        if title_elem is not None and title_elem.text.startswith("Game Event"):
             # Strip the specific prefix for a cleaner display
             clean_title = title_elem.text.replace(prefix_to_remove, "")
             description_elem = item.find('description')
@@ -55,7 +55,7 @@ def display_events(dialog, channel):
 
 def main():
     dialog = xbmcgui.Dialog()
-    url = "https://ogxbox.org/rss/xlinkkai"
+    url = "http://ogxbox.org/rss/xlinkkai"
 
     root = fetch_and_parse_rss(url)
     if root is not None:
