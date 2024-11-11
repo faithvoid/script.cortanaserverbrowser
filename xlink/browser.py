@@ -49,7 +49,7 @@ def save_game(game_name, game_path):
 
 def display_feed_items(dialog, channel):
     regular_items = ['...']
-    excluded_titles = ["Users Online", "Users Today", "Server Status", "Supported Games", "Total Users", "Orbital Server", "Orbital Mesh", "Game Traffic", "Team XLink"]
+    excluded_titles = ["Users Online", "Users Today", "Server Status", "Supported Games", "Total Users", "Orbital Server", "Orbital Mesh", "Game Traffic", "Team XLink", "Game Event"]
     for item in channel.findall('item'):
         title_elem = item.find('title')
         if title_elem is not None:
