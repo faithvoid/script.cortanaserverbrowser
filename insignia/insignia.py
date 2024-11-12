@@ -11,7 +11,7 @@ def main():
         ("Statistics", "RunScript(Q:\\scripts\\Cortana Server Browser\\insignia\\stats.py)"),
         ("Events", "RunScript(Q:\\scripts\\Cortana Server Browser\\insignia\\events.py)"),
         ("News", "RunScript(Q:\\scripts\\Cortana Server Browser\\insignia\\news.py)"),
-        ("Enable Notifications", "RunScript(Q:\\scripts\\Cortana Server Browser\\insignia\\Notify.py)"),
+        ("Enable Notifications", "RunScript(Q:\\scripts\\Cortana Server Browser\\insignia\\notify.py)"),
 	("Disable Notifications", "StopScript(Q:\\scripts\\Cortana Server Browser\\insignia\\notify.py)"),
         ("Insignia Connection Test", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\insigniatest.py)"),
     ]
