@@ -35,7 +35,8 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 
 ## Bugs: 
 - Sometimes game events don't show up the first time. This doesn't seem to be XBMC-specific, as this happens when loading the RSS feed in my PC's browser too. Just try loading it again and it should work.
-- If a "Session" menu is empty, don't panic! It most likely means nobody's playing right now, or that your network isn't reaching the servers properly. Double-check the Insignia/XLink Kai websites to verify this. 
+- If a "Session" menu is empty, don't panic! It most likely means nobody's playing right now, or that your network isn't reaching the servers properly. Double-check the Insignia/XLink Kai websites to verify this.
+- Events don't show up in chronological order.
 - You tell me.
 
 ## To Do (100%):
