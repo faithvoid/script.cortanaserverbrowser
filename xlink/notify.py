@@ -28,6 +28,11 @@ def save_notifications(notifications):
         for notification in notifications:
             f.write("%s\n" % notification)
 
+def clean_title(title):
+    """ Clean the title to remove excessive spaces and ensure correct formatting """
+    # Replace multiple spaces with a single space, and strip leading/trailing spaces
+    return re.sub(r'\s+', ' ', title.strip())
+
 def check_rss_only_once():
     """ Check RSS feed for game events only once at script launch """
     current_notifications = load_notifications()
@@ -42,11 +47,12 @@ def check_rss_only_once():
         for item in root.findall('.//item'):
             title = item.find('title').text
             if title.startswith("Team XLink Discord Game Event - Today") or title.startswith("Team XLink Discord Game Event - Tomorrow"):
-                clean_title = re.sub(r'^Team XLink Discord Game Event - ', '', title)
-                if clean_title not in current_notifications:
-                    game_event_queue.append(("XLink Kai Event(s)", clean_title, 5000, True))
-                    new_notifications.add(clean_title)
-        
+                clean_title_text = re.sub(r'^Team XLink Discord Game Event - ', '', title)
+                clean_title_text = clean_title(clean_title_text)  # Clean the title here
+                if clean_title_text not in current_notifications:
+                    game_event_queue.append(("XLink Kai Event(s)", clean_title_text, 5000, True))
+                    new_notifications.add(clean_title_text)
+
         save_notifications(new_notifications)
     except Exception as e:
         error_msg = "RSS Error: " + str(e)
@@ -73,8 +79,9 @@ def check_rss_regular():
             if match:
                 players = int(match.group(1))
                 if players > 0 and title not in current_notifications:
-                    new_notifications.add(title)
-                    regular_notification_queue.append(("Found XLink Session(s)!", title, 5000, True))
+                    clean_title_text = clean_title(title)  # Clean the title here
+                    new_notifications.add(clean_title_text)
+                    regular_notification_queue.append(("Found XLink Session(s)!", clean_title_text, 5000, True))
 
         save_notifications(new_notifications)
     except Exception as e:
