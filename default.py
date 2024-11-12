@@ -9,7 +9,8 @@ def main():
         ("Insignia", "RunScript(Q:\\scripts\\Cortana Server Browser\\insignia\\insignia.py)"),
         ("XLink Kai", "RunScript(Q:\\scripts\\Cortana Server Browser\\xlink\\xlinkkai.py)"),
 #        ("Cortana Chat", "RunScript(Q:\\scripts\\Cortana Chat\\menu.py)"),
-        ("Cortana News", "RunScript(Q:\\scripts\\Cortana Server Browser\\news.py)"),
+#        ("Cortana News", "RunScript(Q:\\scripts\\Cortana Server Browser\\news.py)"),
+        ("Cortana Settings", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\settings.py)"),
     ]
     
     feed_list = [name for name, _ in feeds]
