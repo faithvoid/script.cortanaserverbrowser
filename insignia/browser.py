@@ -52,16 +52,28 @@ def save_game(game_name, game_path):
 def display_feed_items(dialog, channel):
     regular_items = ['...']
     excluded_titles = ["Users Online", "Registered Users", "Games Supported", "Active Games", "Game Event"]  # List of titles to exclude
+    
     for item in channel.findall('item'):
         title_elem = item.find('title')
         if title_elem is not None:
-            title = title_elem.text
-            if not any(title.startswith(excluded) for excluded in excluded_titles):  # Check if the title starts with any excluded phrases
+            title = title_elem.text.strip()  # Remove leading/trailing whitespace from title
+            
+            # Check if title starts with any excluded phrases
+            if not any(title.startswith(excluded) for excluded in excluded_titles):
                 game_name = clean_game_name(title.split(' - ')[0])
                 game_path = load_game(game_name)
-                description = "Installed - " + game_path if game_path else "Not Installed"
-                regular_items.append(title + " - " + description)
+                
+                # Prepare the description, ensuring correct formatting
+                description = "Installed - {}".format(game_path) if game_path else "Not Installed"
+                
+                # Strip and replace extra spaces in the final formatted item
+                formatted_item = "{} - {}".format(title.strip(), description.strip())
+                formatted_item = re.sub(r'\s+', ' ', formatted_item).strip()  # Replace multiple spaces with one
+                
+                # Append the cleaned and formatted item
+                regular_items.append(formatted_item)
 
+    # Present the user with the selection dialog
     selected_game = dialog.select("Cortana Server Browser - Insignia", regular_items)
     if selected_game == 0:
         xbmc.executebuiltin('RunScript(Q:\\scripts\\Cortana Server Browser\\insignia\\insignia.py)')
