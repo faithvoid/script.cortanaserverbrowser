@@ -3,7 +3,7 @@ import xbmcgui
 import os
 
 autoexec_path = 'Q:\\scripts\\autoexec.py'
-line_to_add_or_remove = "xbmc.executebuiltin('XBMC.RunScript(Q:\\\\scripts\\\\Cortana Server Browser\\\\insignia\\\\notify.py)')"
+line_to_add_or_remove = "xbmc.executebuiltin('XBMC.RunScript(Q:\\\\scripts\\\\Cortana Server Browser\\\\xlinkkai\\\\notify.py)')"
 
 # Function to add the line to autoexec.py
 def add_line():
@@ -20,14 +20,14 @@ def add_line():
             # Add the line at the end
             with open(autoexec_path, 'a') as file:
                 file.write('\n' + line_to_add_or_remove)
-            xbmcgui.Dialog().ok("Success!", "Insignia notifications are now enabled on startup!")
+            xbmcgui.Dialog().ok("Success!", "XLink Kai notifications are now enabled on startup!")
         else:
-            xbmcgui.Dialog().ok("No Changes", "Insignia notifications already enabled!")
+            xbmcgui.Dialog().ok("No Changes", "XLink Kai notifications already enabled!")
     else:
         # If autoexec.py does not exist, create it and add the line
         with open(autoexec_path, 'w') as file:
             file.write(line_to_add_or_remove + '\n')
-        xbmcgui.Dialog().ok("Autoexec Created", "Insignia notifications are now enabled on startup!")
+        xbmcgui.Dialog().ok("Autoexec Created", "XLink Kai notifications are now enabled on startup!")
 
 # Function to remove the line from autoexec.py
 def remove_line():
@@ -45,9 +45,9 @@ def remove_line():
             content.remove(line_to_add_or_remove)
             with open(autoexec_path, 'w') as file:
                 file.write('\n'.join(content) + '\n')
-            xbmcgui.Dialog().ok("Success!", "Insignia notifications are now disabled on startup!")
+            xbmcgui.Dialog().ok("Success!", "XLink Kai notifications are now disabled on startup!")
         else:
-            xbmcgui.Dialog().ok("No Changes", "Insignia notifications already disabled!")
+            xbmcgui.Dialog().ok("No Changes", "XLink Kai notifications already disabled!")
     else:
         xbmcgui.Dialog().ok("Autoexec Not Found", "autoexec.py does not exist!")
 
@@ -55,7 +55,7 @@ def remove_line():
 def show_dialog():
     # Create a dialog to ask the user what action to take
     dialog = xbmcgui.Dialog()
-    result = dialog.select("Select Action", ["Enable Insignia Notifications On Startup", "Disable Insignia Notifications On Startup"])
+    result = dialog.select("Select Action", ["Enable XLink Kai Notifications On Startup", "Disable XLink Kai Notifications On Startup"])
 
     if result == 0:  # "Add line" option
         add_line()
