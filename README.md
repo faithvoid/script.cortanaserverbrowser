@@ -3,6 +3,10 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=8GF4A3XS7ZHFY)
 
+## Screenshots:
+
+
+
 ## Features:
 - View current XLink Kai and Insignia matches in an instant with a friendly, easy-to-use pop-up window!
 - See a game popping off that you really want to join? Click on the game session you'd like to join, locate your game's directory if you haven't already, and you'll be able to immediately launch into that game any time you're in the browser!
