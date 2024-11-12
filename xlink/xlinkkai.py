@@ -10,7 +10,6 @@ def main():
         ("Sessions", "RunScript(Q:\\scripts\\Cortana Server Browser\\xlink\\browser.py)"),
         ("Statistics", "RunScript(Q:\\scripts\\Cortana Server Browser\\xlink\\stats.py)"),
         ("Events", "RunScript(Q:\\scripts\\Cortana Server Browser\\xlink\\events.py)"),
-        ("News", "RunScript(Q:\\scripts\\Cortana Server Browser\\xlink\\news.py)"),
         ("Enable Notifications", "RunScript(Q:\\scripts\\Cortana Server Browser\\xlink\\notify.py)"),
 	("Disable Notifications", "StopScript(Q:\\scripts\\Cortana Server Browser\\xlink\\notify.py)"),
     ]
