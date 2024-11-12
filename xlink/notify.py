@@ -38,7 +38,7 @@ def check_rss_only_once():
     current_notifications = load_notifications()
     new_notifications = set()
     try:
-        url = 'https://ogxbox.org/rss/xlinkkai'
+        url = 'http://ogxbox.org/rss/xlinkkai'
         req = urllib2.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         response = urllib2.urlopen(req)
         data = response.read()
@@ -64,7 +64,7 @@ def check_rss_regular():
     current_notifications = load_notifications()
     new_notifications = set()
     try:
-        url = 'https://ogxbox.org/rss/xlinkkai'
+        url = 'http://ogxbox.org/rss/xlinkkai'
         req = urllib2.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         response = urllib2.urlopen(req)
         data = response.read()
