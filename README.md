@@ -5,6 +5,15 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 
 ## Screenshots:
 
+![1](screenshots/screenshot002.bmp)
+![2](screenshots/screenshot003.bmp)
+![3](screenshots/screenshot004.bmp)
+![4](screenshots/screenshot005.bmp)
+![5](screenshots/screenshot006.bmp)
+![6](screenshots/screenshot007.bmp)
+![7](screenshots/screenshot008.bmp)
+![8](screenshots/screenshot009.bmp)
+![9](screenshots/screenshot010.bmp)
 
 
 ## Features:
