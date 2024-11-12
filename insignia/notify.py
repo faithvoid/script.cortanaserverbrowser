@@ -28,12 +28,17 @@ def save_notifications(notifications):
         for notification in notifications:
             f.write("%s\n" % notification)
 
+def clean_title(title):
+    """ Clean the title to remove excessive spaces and ensure correct formatting """
+    # Replace multiple spaces with a single space, and strip leading/trailing spaces
+    return re.sub(r'\s+', ' ', title.strip())
+
 def check_rss_only_once():
     """ Check RSS feed only once for game events at script launch """
     current_notifications = load_notifications()
     new_notifications = set()
     try:
-        url = 'https://ogxbox.org/rss/insignia.xml'
+        url = 'http://ogxbox.org/rss/insignia.xml'
         req = urllib2.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         response = urllib2.urlopen(req)
         data = response.read()
@@ -42,10 +47,11 @@ def check_rss_only_once():
         for item in root.findall('.//item'):
             title = item.find('title').text
             if title.startswith("Game Event - Today") or title.startswith("Game Event - Tomorrow"):
-                clean_title = re.sub(r'^Game Event - ', '', title)
-                if clean_title not in current_notifications:
-                    game_event_queue.append(("Insignia Event(s)", clean_title))
-                    new_notifications.add(clean_title)
+                clean_title_text = re.sub(r'^Game Event - ', '', title)
+                clean_title_text = clean_title(clean_title_text)  # Clean the title here
+                if clean_title_text not in current_notifications:
+                    game_event_queue.append(("Insignia Event(s)", clean_title_text))
+                    new_notifications.add(clean_title_text)
 
         save_notifications(new_notifications)
     except Exception as e:
@@ -58,7 +64,7 @@ def check_rss_regular():
     current_notifications = load_notifications()
     new_notifications = set()
     try:
-        url = 'https://ogxbox.org/rss/insignia.xml'
+        url = 'http://ogxbox.org/rss/insignia.xml'
         req = urllib2.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         response = urllib2.urlopen(req)
         data = response.read()
@@ -73,9 +79,10 @@ def check_rss_regular():
             if match:
                 players = int(match.group(1))
                 if players > 0:
-                    new_notifications.add(title)
-                    if title not in current_notifications:
-                        regular_notification_queue.append(("Insignia Session(s)!", title))
+                    clean_title_text = clean_title(title)  # Clean the title here
+                    new_notifications.add(clean_title_text)
+                    if clean_title_text not in current_notifications:
+                        regular_notification_queue.append(("Insignia Session(s)!", clean_title_text))
 
         save_notifications(new_notifications)
     except Exception as e:
