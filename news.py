@@ -35,6 +35,7 @@ def show_news_articles():
         ("Cortana", "http://lain.ftp.sh/cortana/news.xml"),
         ("Insignia", "https://mas.to/@insignia.rss"),
         ("Xbox-Scene", "http://feeds.feedburner.com/XboxScene"),
+	("The Usual Places Modcast", "https://anchor.fm/s/f5e086d4/podcast/rss"),
     ]
 
     titles = [item[0] for item in news_menu]
