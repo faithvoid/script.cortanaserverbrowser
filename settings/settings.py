@@ -12,6 +12,7 @@ def main():
         ("Internet Connection Test", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\internettest.py)"),
         ("Notification Settings", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\notificationsettings.py)"),
         ("XBMC4Gamers Scripts", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\x4g.py)"),
+        ("Edit Gamertag", "RunScript(Q:\\skins\\Cortana\\scripts\\gamertag.py)"),
 #       ("Update Cortana", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\update.py)"),
     ]
     
