@@ -56,7 +56,7 @@ if __name__ == '__main__':
         xbmcgui.Dialog().ok(
             "Connection Failed!",
             "Local IP: " + local_ip,
-            "Internet IP: N/A",
+            "External IP: N/A",
             "Check your network settings and try again."
         )
     else:
