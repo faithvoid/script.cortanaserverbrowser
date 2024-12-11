@@ -59,7 +59,6 @@ if __name__ == '__main__':
             "Internet IP: N/A",
             "Check your network settings and try again."
         )
-        xbmc.executebuiltin('RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\settings.py)')
     else:
         xbmcgui.Dialog().ok(
             "Network Status",
@@ -67,7 +66,3 @@ if __name__ == '__main__':
             "Internet IP: " + external_ip,
             insignia_message
         )
-        if insignia_status == "Success":
-            xbmc.executebuiltin('RunScript(Q:\\scripts\\Cortana Server Browser\\Insignia\\Insignia.py)')
-        else:
-            xbmc.executebuiltin('RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\settings.py)')
