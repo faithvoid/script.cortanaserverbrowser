@@ -13,7 +13,7 @@ def main():
         ("Notification Settings", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\notificationsettings.py)"),
         ("XBMC4Gamers Scripts", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\x4g.py)"),
         ("Edit Gamertag", "RunScript(Q:\\skins\\Cortana\\scripts\\gamertag.py)"),
-#       ("Update Cortana", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\update.py)"),
+        ("Update Cortana", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\update.py)"),
     ]
     
     feed_list = [name for name, _ in feeds]
