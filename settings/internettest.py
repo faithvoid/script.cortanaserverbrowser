@@ -28,16 +28,46 @@ def get_external_ip():
         external_ip = 'N/A'
     return external_ip
 
+def check_insignia_connection():
+    hostname = "macs.xboxlive.com"
+    target_ip1 = "46.101.64.175"
+    target_ip2 = "49.13.57.101"
+
+    try:
+        # Resolve the hostname to an IP address
+        ip_address = socket.gethostbyname(hostname)
+        # Determine connection status
+        if ip_address == target_ip1 or ip_address == target_ip2:
+            return "Success", "Connected to Insignia!"
+        else:
+            return "Failure", "You are NOT conneted to Insignia!"
+    except socket.gaierror:
+        return "Error", "Failed to resolve hostname."
+
 if __name__ == '__main__':
     local_ip = get_local_ip()
     external_ip = get_external_ip()
-    dialog = xbmcgui.Dialog()
 
+    # Check Insignia connection status
+    insignia_status, insignia_message = check_insignia_connection()
+
+    # Build and display the final dialog
     if external_ip == 'N/A':
-        # Display a connection error message if the external IP cannot be fetched
-        dialog.ok("Connection Failed!", "Local IP: {}".format(local_ip), "Internet IP: N/A", "Check your network settings/cables and try again.")
-	xbmc.executebuiltin('RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\settings.py)')
+        xbmcgui.Dialog().ok(
+            "Connection Failed!",
+            "Local IP: " + local_ip,
+            "Internet IP: N/A",
+            "Check your network settings and try again."
+        )
+        xbmc.executebuiltin('RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\settings.py)')
     else:
-        # Display both local and internet IP addresses if the external IP is fetched successfully
-        dialog.ok("Success!", "Local IP: {}".format(local_ip), "Internet IP: {}".format(external_ip), "Your Xbox is connected to the internet!")
-	xbmc.executebuiltin('RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\settings.py)')
+        xbmcgui.Dialog().ok(
+            "Network Status",
+            "Local IP: " + local_ip,
+            "Internet IP: " + external_ip,
+            insignia_message
+        )
+        if insignia_status == "Success":
+            xbmc.executebuiltin('RunScript(Q:\\scripts\\Cortana Server Browser\\Insignia\\Insignia.py)')
+        else:
+            xbmc.executebuiltin('RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\settings.py)')
