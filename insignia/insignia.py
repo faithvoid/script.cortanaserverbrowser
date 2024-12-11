@@ -12,7 +12,7 @@ def main():
         ("Events", "RunScript(Q:\\scripts\\Cortana Server Browser\\insignia\\events.py)"),
         ("Enable Notifications", "RunScript(Q:\\scripts\\Cortana Server Browser\\insignia\\notify.py)"),
 	("Disable Notifications", "StopScript(Q:\\scripts\\Cortana Server Browser\\insignia\\notify.py)"),
-        ("Insignia Connection Test", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\insigniatest.py)"),
+        ("Insignia Connection Test", "RunScript(Q:\\scripts\\Cortana Server Browser\\settings\\internettest.py)"),
     ]
     
     feed_list = [name for name, _ in feeds]
