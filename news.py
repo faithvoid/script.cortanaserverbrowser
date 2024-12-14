@@ -14,8 +14,6 @@ def show_news_articles(url=None):
         ("Xbox-Scene", "https://feeds.feedburner.com/XboxScene"),
         ("The Usual Places Modcast", "https://anchor.fm/s/f5e086d4/podcast/rss"),
         ("Original Xbox (Reddit)", "https://www.ogxbox.org/rss/originalxboxreddit"),
-        ("Insignia - RSS", "https://www.ogxbox.org/rss/insignia.xml"),
-        ("XLink Kai - RSS", "https://www.ogxbox.org/rss/insignia.xml"),
     ]
 
     titles = [item[0] for item in news_menu]
