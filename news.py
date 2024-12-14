@@ -72,7 +72,6 @@ def show_news_articles(url=None):
         if root:
             display_news_items(dialog, root, url)
 
-
 def display_news_items(dialog, root, url):
     channel = root.find('channel')
     if not channel:
@@ -132,9 +131,11 @@ def display_news_items(dialog, root, url):
                 break  # If the dialog is closed, exit the loop
 
         # After exiting the article view, return to the article list
-        show_news_articles(url)  # Return to the article list for the selected feed
+        display_news_items(dialog, root, url)  # Go back to the article list
 
-
+    else:
+        # If the user exits from the article list, return to the source menu
+        show_news_articles()  # Go back to the source selection menu
 
 if __name__ == '__main__':
     show_news_articles()
