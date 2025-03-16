@@ -45,7 +45,8 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 - Reintroduce update feature (need stable domain name first).
 
 ## To Do (Maybe):
-- Restore lost XLink Kai functionality by re-implememting Kai Engine HTTP API features. 
+- [Restore lost XLink Kai functionality by re-implememting Kai Engine HTTP API features](https://github.com/faithvoid/script.xlinkrevived)
+
 
 ## FAQ: 
 - "Does this work on XBMC4Gamers?"
