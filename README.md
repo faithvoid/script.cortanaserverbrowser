@@ -5,15 +5,15 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 
 ## Screenshots:
 
-![1](screenshots/screenshot002.bmp)
-![2](screenshots/screenshot003.bmp)
-![3](screenshots/screenshot004.bmp)
-![4](screenshots/screenshot005.bmp)
-![5](screenshots/screenshot006.bmp)
-![6](screenshots/screenshot007.bmp)
-![7](screenshots/screenshot008.bmp)
-![8](screenshots/screenshot009.bmp)
-![9](screenshots/screenshot010.bmp)
+![1](legacy/screenshots/screenshot002.bmp)
+![2](legacy/screenshots/screenshot003.bmp)
+![3](legacy/screenshots/screenshot004.bmp)
+![4](legacy/screenshots/screenshot005.bmp)
+![5](legacy/screenshots/screenshot006.bmp)
+![6](legacy/screenshots/screenshot007.bmp)
+![7](legacy/screenshots/screenshot008.bmp)
+![8](legacy/screenshots/screenshot009.bmp)
+![9](legacy/screenshots/screenshot010.bmp)
 
 
 ## Features:
@@ -28,15 +28,16 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 
 ## Installation:
 - **Make sure your XBMC4Xbox settings are set to "Dashboard"!** XBMC4Gamers users don't have to worry about this as there's a DNS1 and DNS2 option, but XBMC4XBox by default only uses DNS1, which is usually set to Insignia, and won't allow you to connect to the rest of the internet. This should be fixed with the next X4X release!
-- Copy the "Cortana Server Browser" folder into your "Q:\scripts" folder. Note that it **HAS** to be in this path and it has to be named "Cortana Server Browser", as the Python script paths are hardcoded to this folder.
-- Go into your Scripts menu in XBMC and select "Cortana Server Browser"
+- Copy the "Cortana Server Browser" folder into your "Q:\scripts" folder.
+- Go into your Scripts menu in XBMC and select "Cortana Server Browser".
+- Select the server of your choice.
 - ???
 - Profit.
 
 ## Bugs: 
+- Notifier has a 1/60 chance per minute of crashing when a game is launched outside of CSB. Not sure how to rectify it. It's rare, but it CAN happen, so listing it as a bug here.
 - Sometimes game events don't show up the first time. This doesn't seem to be XBMC-specific, as this happens when loading the RSS feed in my PC's browser too. Just try loading it again and it should work.
 - If a "Session" menu is empty, don't panic! It most likely means nobody's playing right now, or that your network isn't reaching the servers properly. Double-check the Insignia/XLink Kai websites to verify this.
-- Events don't show up in chronological order.
 - You tell me.
 
 ## To Do (100%):
@@ -51,10 +52,9 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 
 It should, but I haven't done the testing myself, as I don't personally use X4G (I think it's great for playing games w/ zero frills, but as an XBMC script/addon dev and an old media buff I use the original XBMC4Xbox!)
 
-
 - "Will this come to (insert non-XBMC dashboard name here)?"
 
-No, sorry! I wish!  Every piece of this code relies heavily on XBMC's Python implementation (including XBMC-specific code like dialogOk windows). You can feel free to make a homebrew application based on it if you want, but I won't be supporting non-XBMC dashboards.
+No, sorry! I wish!  Every piece of this code relies heavily on XBMC's Python implementation (including XBMC-specific code like dialogOk windows). You can feel free to make a homebrew application based on it if you want, but I won't be supporting non-XBMC dashboards. After all, it mostly just uses the OGXbox RSS feed and some clever scripting to launch XBEs!
 
 - "What's the point of this script, can't you just check these stats on your PC/Phone? Why support such an old piece of hardware?"
 
@@ -66,7 +66,10 @@ The Insignia notifier won't notify you of active sessions if a game says (0 in 0
 
 ## Credits:
 - Insignia Team - For reviving one of the best multiplayer services of all time.
+- Team XLink - For being the original free console multiplayer service! I lost many hours of my younger years playing Halo over XLink Kai and I'm glad the service is still running and still free!
 - XBMC4Xbox Team - For making an incredibly useful and flexible dashboard for the original Xbox!
 - OGXbox Team - For their Insignia & XLink Kai RSS feeds that this scrapes from!
 - antonic901 - For letting me know that the latest XBMC trunk supports a newer version of OpenSSL & TLS 1.2!
 - rocky5 - For the XBMC4Gamers scripts!
+- umbral_shadows - Initial alpha testing!
+- Crunchbite - For giving additional documentation on XLink Kai
