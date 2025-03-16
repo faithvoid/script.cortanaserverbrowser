@@ -9,15 +9,11 @@ import HTMLParser  # Use HTMLParser for decoding HTML entities in Python 2.x
 def show_news_articles(url=None):
     dialog = xbmcgui.Dialog()
     news_menu = [
-        ("Cortana", "https://faithvoid.github.io/cortana/news.xml"),
-        ("Insignia (Mastodon)", "https://bsky.app/profile/insignia.live/rss"),
-        ("XLink Kai (Mastodon)", "https://bsky.app/profile/teamxlink.co.uk/rss"),
+        ("Cortana", "https://lain.ftp.sh/cortana/news.xml"),
+        ("Insignia (Mastodon)", "https://mas.to/@insignia.rss"),
         ("Xbox-Scene", "https://feeds.feedburner.com/XboxScene"),
         ("The Usual Places Modcast", "https://anchor.fm/s/f5e086d4/podcast/rss"),
         ("Original Xbox (Reddit)", "https://www.ogxbox.org/rss/originalxboxreddit"),
-        ("heise online - IT", "https://www.heise.de/rss/heise-Rubrik-IT.rdf"),
-        ("heise online - Netzpolitik", "https://www.heise.de/rss/heise-Rubrik-Netzpolitik.rdf"),
-        ("fefe's Blog", "https://blog.fefe.de/rss.xml?html")
     ]
 
     titles = [item[0] for item in news_menu]
@@ -93,20 +89,15 @@ def display_news_items(dialog, root, url):
         items = []
         descriptions = []
         for item in channel.findall('item'):
-            title = item.find('title').text if item.find('title') is not None else ""
+            title = item.find('title').text if item.find('title') is not None else "No Title"
             description = item.find('description').text if item.find('description') is not None else "No Description"
 
             title = clean_text(title)
             description = clean_text(description)
 
-            # Fall back to description if title is missing or empty
-            if not title.strip():
-                title = description
-
             items.append(title)
             wrapped_description = wrap_text(description)
             descriptions.append(wrapped_description)
-
 
     elif root.tag == 'feed':
         # Handle Atom feed
