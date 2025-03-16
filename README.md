@@ -28,7 +28,7 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 
 ## Installation:
 - **Make sure your XBMC4Xbox settings are set to "Dashboard"!** XBMC4Gamers users don't have to worry about this as there's a DNS1 and DNS2 option, but XBMC4XBox by default only uses DNS1, which is usually set to Insignia, and won't allow you to connect to the rest of the internet. This should be fixed with the next X4X release!
-- Copy the "Cortana Server Browser" folder into your "Q:\scripts" folder.
+- Copy the "Cortana Server Browser" folder into your "Q:\scripts" folder. Make sure you use the latest release .zip and NOT files from the repository, as the repository files are almost always very unstable due to being half-updated!
 - Go into your Scripts menu in XBMC and select "Cortana Server Browser".
 - Select the server of your choice.
 - ???
