@@ -22,9 +22,7 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 - Browse Insignia / XLink Kai statistics, game events, and news!
 - Toast (pop-up) notifications for new Insignia sessions, which can be enabled/disabled in the Insignia Settings menu (and even enabled on startup!) Now you'll never have to worry about missing a match!
 - Comes with "Insignia Connection Test", a utility which makes sure your DNS is correctly set to Insignia's.
-- Built-in Cortana update utility! No PC needed!
-- Super modular! Each script is (usually) it's own .py file, so you can add/remove functionality easily!
-- Love XBMC4Gamers but love XBMC4Xbox more? Run XBMC4Gamers scripts directly from the Cortana settings menu! 
+- Built-in Cortana update utility! No PC needed! (Coming Soon!)
 
 ## Installation:
 - **Make sure your XBMC4Xbox settings are set to "Dashboard"!** XBMC4Gamers users don't have to worry about this as there's a DNS1 and DNS2 option, but XBMC4XBox by default only uses DNS1, which is usually set to Insignia, and won't allow you to connect to the rest of the internet. This should be fixed with the next X4X release!
@@ -40,13 +38,10 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 - If a "Session" menu is empty, don't panic! It most likely means nobody's playing right now, or that your network isn't reaching the servers properly. Double-check the Insignia/XLink Kai websites to verify this.
 - You tell me.
 
-## To Do (100%):
+## TODO:
+- [Restore lost XLink Kai functionality by re-implememting Kai Engine HTTP API features](https://github.com/faithvoid/script.xlinkrevived)
 - Add more useful utilities.
 - Reintroduce update feature (need stable domain name first).
-
-## To Do (Maybe):
-- [Restore lost XLink Kai functionality by re-implememting Kai Engine HTTP API features](https://github.com/faithvoid/script.xlinkrevived)
-
 
 ## FAQ: 
 - "Does this work on XBMC4Gamers?"
@@ -71,6 +66,5 @@ The Insignia notifier won't notify you of active sessions if a game says (0 in 0
 - XBMC4Xbox Team - For making an incredibly useful and flexible dashboard for the original Xbox!
 - OGXbox Team - For their Insignia & XLink Kai RSS feeds that this scrapes from!
 - antonic901 - For letting me know that the latest XBMC trunk supports a newer version of OpenSSL & TLS 1.2!
-- rocky5 - For the XBMC4Gamers scripts!
 - umbral_shadows - Initial alpha testing!
-- Crunchbite - For giving additional documentation on XLink Kai
+- Crunchbite - For giving additional documentation on XLink Kai!
