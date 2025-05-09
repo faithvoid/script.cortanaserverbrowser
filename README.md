@@ -35,7 +35,7 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 ## Bugs: 
 - Notifier has a 1/60 chance per minute of crashing when a game is launched outside of CSB. Not sure how to rectify it. It's rare, but it CAN happen, so listing it as a bug here.
 - Sometimes game events don't show up the first time. This doesn't seem to be XBMC-specific, as this happens when loading the RSS feed in my PC's browser too. Just try loading it again and it should work.
-- If a "Session" menu is empty, don't panic! It most likely means nobody's playing right now, or that your network isn't reaching the servers properly. Double-check the Insignia/XLink Kai websites to verify this.
+- If a "Session" menu is empty, don't panic! It most likely means nobody's playing right now, or that your network isn't reaching the servers properly. Double-check the Insignia/XLink Kai websites on another device to verify this.
 - You tell me.
 
 ## TODO:
@@ -46,7 +46,7 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 ## FAQ: 
 - "Does this work on XBMC4Gamers?"
 
-It should, but I haven't done the testing myself, as I don't personally use X4G (I think it's great for playing games w/ zero frills, but as an XBMC script/addon dev and an old media buff I use the original XBMC4Xbox!)
+It does, but for Insignia you're better off using Rocky5's new Insignia Sessions feature in X4G for a more seamless experience! 
 
 - "Will this come to (insert non-XBMC dashboard name here)?"
 
