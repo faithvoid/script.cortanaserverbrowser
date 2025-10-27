@@ -11,6 +11,7 @@ NOTIFY_INSIGNIA = os.path.join(SCRIPT_DIR, "notify-insignia.py")
 DISPLAY_LEADERBOARD = os.path.join(SCRIPT_DIR, "leaderboard.py")
 CONNECTION_TEST = os.path.join(SCRIPT_DIR, "internettest.py")
 INSIGNIA_NEWS = os.path.join(SCRIPT_DIR, "insignia-news.py")
+INSIGNIA_SETUP = os.path.join(SCRIPT_DIR, "insigniasetup.py")
 
 def fetch_and_parse_rss(url):
     try:
@@ -169,6 +170,9 @@ def display_leaderboard(dialog, channel):
 def connection_test(dialog, channel):
     xbmc.executebuiltin('RunScript("{}")'.format(CONNECTION_TEST))
 
+def insignia_setup(dialog, channel):
+    xbmc.executebuiltin('RunScript("{}")'.format(INSIGNIA_SETUP))
+
 def insignia_news(dialog, channel):
     xbmc.executebuiltin('RunScript("{}")'.format(INSIGNIA_NEWS))
 
@@ -181,6 +185,7 @@ def main():
 #        ("Scoreboard", display_leaderboard),
         ("Enable | Disable Notifications", display_insignia_notifications),
         ("Insignia Connection Test", connection_test),
+        ("Insignia Setup", insignia_setup),
         ("News", insignia_news),
     ]
 
