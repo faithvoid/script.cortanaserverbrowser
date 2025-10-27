@@ -9,34 +9,48 @@ import os
 
 NOTIFY_FILE="Z:\\temp\\insignia.txt"
 
-# Separate queues for storing different types of notification messages
 game_event_queue = deque()
 regular_notification_queue = deque()
 
 def clear_notifications_file():
-    """ Clear the notifications file at the start of the script. """
     open(NOTIFY_FILE, "w").close()
 
 def load_notifications():
-    """ Load previous notifications from file """
     if os.path.exists(NOTIFY_FILE):
         with open(NOTIFY_FILE, "r") as f:
             return set(f.read().strip().split("\n"))
     return set()
 
 def save_notifications(notifications):
-    """ Save current notifications to file """
     with open(NOTIFY_FILE, "w") as f:
         for notification in notifications:
             f.write("%s\n" % notification)
 
 def clean_title(title):
-    """ Clean the title to remove excessive spaces and ensure correct formatting """
-    # Replace multiple spaces with a single space, and strip leading/trailing spaces
-    return re.sub(r'\s+', ' ', title.strip())
+    if not title:
+        return ""
+    
+    title = re.sub(r'\s+', ' ', title.strip())
+    
+    title = title.replace("&amp;", "&")
+    
+    return title
+
+def extract_game_id(link):
+    if link:
+        match = re.search(r'/games/(\w+)', link)
+        if match:
+            return match.group(1)
+    return None
+
+def get_game_thumbnail(game_id):
+    if game_id and len(game_id) >= 4:
+        game_id_upper = game_id.upper()
+        folder = game_id_upper[:4]
+        return "https://raw.githubusercontent.com/MobCat/MobCats-original-xbox-game-list/main/icon/{0}/{1}.png".format(folder, game_id_upper)
+    return ""
 
 def check_rss_only_once():
-    """ Check RSS feed only once for game events at script launch """
     current_notifications = load_notifications()
     new_notifications = set()
     try:
@@ -47,22 +61,30 @@ def check_rss_only_once():
         root = ET.fromstring(data)
 
         for item in root.findall('.//item'):
-            title = item.find('title').text
+            title_element = item.find('title')
+            link_element = item.find('link')
+            if title_element is None:
+                continue
+
+            title = title_element.text
+            link = link_element.text if link_element is not None else None
+
             if title.startswith("Game Event - Today") or title.startswith("Game Event - Tomorrow"):
                 clean_title_text = re.sub(r'^Game Event - ', '', title)
-                clean_title_text = clean_title(clean_title_text)  # Clean the title here
+                clean_title_text = clean_title(clean_title_text)
                 if clean_title_text not in current_notifications:
-                    game_event_queue.append(("Insignia Event(s)", clean_title_text))
+                    game_id = extract_game_id(link)
+                    thumb_url = get_game_thumbnail(game_id)
+                    game_event_queue.append(("Insignia - Event", clean_title_text, thumb_url))
                     new_notifications.add(clean_title_text)
 
         save_notifications(new_notifications)
     except Exception as e:
         error_msg = "RSS Error: " + str(e)
-        regular_notification_queue.append(("RSS Feed Error", error_msg))
+        regular_notification_queue.append(("RSS Feed Error", error_msg, ""))
         new_notifications.add(error_msg)
 
 def check_rss_regular():
-    """ Check RSS feed regularly for all other notifications """
     current_notifications = load_notifications()
     new_notifications = set()
     try:
@@ -73,7 +95,14 @@ def check_rss_regular():
         root = ET.fromstring(data)
 
         for item in root.findall('.//item'):
-            title = item.find('title').text
+            title_element = item.find('title')
+            link_element = item.find('link')
+            if title_element is None:
+                continue
+
+            title = title_element.text
+            link = link_element.text if link_element is not None else None
+
             if "(0 in 0 sessions)" in title:
                 continue
 
@@ -81,35 +110,39 @@ def check_rss_regular():
             if match:
                 players = int(match.group(1))
                 if players > 0:
-                    clean_title_text = clean_title(title)  # Clean the title here
+                    clean_title_text = clean_title(title)
                     new_notifications.add(clean_title_text)
                     if clean_title_text not in current_notifications:
-                        regular_notification_queue.append(("Insignia Session(s)!", clean_title_text))
+                        game_id = extract_game_id(link)
+                        thumb_url = get_game_thumbnail(game_id)
+                        regular_notification_queue.append(("Insignia", clean_title_text, thumb_url))
 
         save_notifications(new_notifications)
     except Exception as e:
         error_msg = "RSS Error: " + str(e)
-        regular_notification_queue.append(("RSS Feed Error", error_msg))
+        regular_notification_queue.append(("RSS Feed Error", error_msg, ""))
         new_notifications.add(error_msg)
 
 def process_notifications():
-    """ Process and display queued notifications """
     while game_event_queue:
-        header, message = game_event_queue.popleft()
-        display_notification(header, message)
+        header, message, thumb = game_event_queue.popleft()
+        display_notification(header, message, thumb)
 
     while regular_notification_queue:
-        header, message = regular_notification_queue.popleft()
-        display_notification(header, message)
+        header, message, thumb = regular_notification_queue.popleft()
+        display_notification(header, message, thumb)
 
-def display_notification(header, message):
-    """ Display notifications based on their type and content """
-    xbmc.executebuiltin('Notification("{}", "{}")'.format(header, message))
-    time.sleep(10)
+def display_notification(header, message, thumbnail):
+    duration = 5000  # milliseconds
+    if thumbnail:
+        xbmc.executebuiltin('Notification("{}", "{}", {}, "{}")'.format(
+            header, message, duration, thumbnail))
+    else:
+        xbmc.executebuiltin('Notification("{}", "{}", {})'.format(header, message, duration))
+    
+    time.sleep(duration / 1000.0)
 
-# Clear notifications file at the start
 clear_notifications_file()
-# Check RSS feed for game events only once at start
 check_rss_only_once()
 process_notifications()
 
