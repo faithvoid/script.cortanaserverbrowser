@@ -22,6 +22,7 @@ An XBMC script that shows how many players are logged into Insignia and XLink Ka
 - Browse Insignia / XLink Kai statistics, game events, and news!
 - Toast (pop-up) notifications for new Insignia sessions, which can be enabled/disabled in the Insignia Settings menu (and even enabled on startup!) Now you'll never have to worry about missing a match!
 - Comes with "Insignia Connection Test", a utility which makes sure your DNS is correctly set to Insignia's.
+- Not registered to Insignia yet? Select "Insignia Setup" and the script will automatically download and launch the [Insignia Setup Assistant](https://insignia.live/connect)!
 - Built-in Cortana update utility! No PC needed! (Coming Soon!)
 
 ## Installation:
