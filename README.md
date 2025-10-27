@@ -69,3 +69,4 @@ The Insignia notifier won't notify you of active sessions if a game says (0 in 0
 - antonic901 - For letting me know that the latest XBMC trunk supports a newer version of OpenSSL & TLS 1.2!
 - umbral_shadows - Initial alpha testing!
 - Crunchbite - For giving additional documentation on XLink Kai!
+- MobCat - Xbox icon database, which the Insignia notifier uses for thumbnails!
