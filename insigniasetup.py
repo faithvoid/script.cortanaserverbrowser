@@ -9,8 +9,7 @@ def main():
     setup = xbmcgui.Dialog().yesno("Insignia", "Is your Xbox already registered for Insignia?")
     
     if not setup:
-        download = xbmcgui.Dialog().yesno("Insignia", 
-                                                   "Would you like to download and run the Insignia Setup Utility?")
+        download = xbmcgui.Dialog().yesno("Insignia", "Would you like to download and run the Insignia Setup Utility?")
         if not download:
             return
     
